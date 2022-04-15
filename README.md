@@ -2,11 +2,24 @@
 
 ## Deployment
 
-#Connect-AzAccount -EnvironmentName AzureUSGovernment
-#Log into Azure
+```bash
+If deploying into MAG
+Connect-AzAccount -EnvironmentName AzureUSGovernment
+
+If deploying into MAC
+Log into Azure
 Add-AzAccount
-#Select the correct subscription
+
+Select the correct subscription
 Get-AzSubscription -SubscriptionName "AzGovInt" | Select-AzSubscription
+
+From the infrastructure folder run the following commands:
+
+terraform init
+terraform plan
+terraform apply
+
+```
 
 ## Summary
 
