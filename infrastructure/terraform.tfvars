@@ -1,6 +1,6 @@
 location = "usgovvirginia"   #region lookup https://github.com/claranet/terraform-azurerm-regions/blob/master/REGIONS.md
 
-resource_group_name = "RS"
+resource_group_name = "RS01"
 
 tags = {
     Terraform   = "true"
@@ -17,7 +17,7 @@ custom_rules = [
     priority               = 300
     direction              = "Inbound"
     access                 = "Allow"
-    protocol               = "tcp"
+    protocol               = "Tcp"
     source_port_range      = "*"
     destination_port_range = "22"
     source_address_prefix  = "67.85.28.42/32"
@@ -28,7 +28,7 @@ custom_rules = [
     priority               = 301
     direction              = "Inbound"
     access                 = "Allow"
-    protocol               = "tcp"
+    protocol               = "Tcp"
     source_port_range      = "*"
     destination_port_range = "22"
     source_address_prefix  = "68.198.27.197/32"
@@ -81,7 +81,7 @@ vnets = [
             }
         ]            
  
-csr_scale = 16
+csr_scale = 1
 
 
 

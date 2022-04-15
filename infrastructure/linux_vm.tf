@@ -12,7 +12,7 @@ module "linux_vm" {
 
   vm_hostname = "${module.vnet[count.index].vnet_name}-vm"
 
-  admin_username = data.azurerm_key_vault_secret.keyvault-username.value
+  admin_username = "len" #data.azurerm_key_vault_secret.keyvault-username.value
 
   enable_ssh_key = true
   ssh_key_values = [ data.azurerm_ssh_public_key.sshkey.public_key ]

@@ -65,7 +65,7 @@ resource "azurerm_virtual_network_gateway_connection" "CSR" {
 
   enable_bgp = true
 
-  shared_key = data.azurerm_key_vault_secret.sharedkey.value
+  shared_key = "ciscocisco" #data.azurerm_key_vault_secret.sharedkey.value
 
   # to overcome an error of non-existent RG
   depends_on = [

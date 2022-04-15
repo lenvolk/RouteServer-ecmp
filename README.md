@@ -8,13 +8,21 @@ Create KeyVault named "cs-keystore"
 
 create secrets: adminusername adminpassword sharedkey
 
-create a key: desktop
+create a key: from portal ssh key
+
+az vm image terms accept --publisher cisco --offer cisco-csr-1000v --plan "17_3_2-byol"
 
 ```bash
+
+wsl
+
+sudo -s   (if need to reset local admin pass lusrmgr.msc )
 
 az cloud set --name AzureUSGovernment
 az login --only-show-errors -o table --query Dummy
 az account set -s AzGovInt
+
+az vm image terms accept --publisher cisco --offer cisco-csr-1000v --plan "17_3_2-byol"
 
 From the infrastructure folder run the following commands:
 
