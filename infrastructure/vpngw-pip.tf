@@ -6,7 +6,7 @@ resource "azurerm_public_ip" "vpngw-pip" {
   location            = var.location
   allocation_method   = "Static"
   sku                 = "Standard"
-  
+  zones               = [ "1" ]
 
   # to overcome an error of non-existent RG
   depends_on = [
