@@ -1,8 +1,16 @@
 # ECMP via RouteSerer in Azure
 
+## Deployment
+
+#Connect-AzAccount -EnvironmentName AzureUSGovernment
+#Log into Azure
+Add-AzAccount
+#Select the correct subscription
+Get-AzSubscription -SubscriptionName "AzGovInt" | Select-AzSubscription
+
 ## Summary
 
-In this document, we will examine two methods for installing parallel routes in an Azure routing table - dynamically via the RouteServer and statically by using UDRs. 
+In this document, we will examine two methods for installing parallel routes in an Azure routing table - dynamically via the RouteServer and statically by using UDRs.
 
 ## Overview
 
@@ -10,7 +18,8 @@ In the lab, the following topology was used. CSRs (NVAs) were scaled up to 16. I
 
 ![Topology](img=/../supplementals/topology.png)
 
-All BGP peers have a default route artificially injected by using the "default-originate" statement on Cisco CSR. 
+All BGP peers have a default route artificially injected by using the "default-originate" statement on Cisco CSR.
+
 ```cisco
 router bgp 65555
  bgp log-neighbor-changes
@@ -36,24 +45,26 @@ Because Terraform AzureRM provider did not have Route Server support at the time
 
 By using the os_profile / custom_data declaration, a CSR configuration is generated and injected during creation.
 
-You must create SSH keys in advance and upload them to Azure SSH keys. The same holds true for usernames, passwords, and shared keys. See data.tf for details. 
+You must create SSH keys in advance and upload them to Azure SSH keys. The same holds true for usernames, passwords, and shared keys. See data.tf for details.
 
-Resource Group | Keyvault / storage | Key
------------- | ------------- | ---
-CloudShell | cs-keystore | adminusername
-CloudShell | cs-keystore | adminpassword
-CloudShell | ssh keys | desktop
-CloudSehll | cs-keystore | sharedkey
+| Resource Group | Keyvault / storage | Key           |
+| -------------- | ------------------ | ------------- |
+| CloudShell     | cs-keystore        | adminusername |
+| CloudShell     | cs-keystore        | adminpassword |
+| CloudShell     | ssh keys           | desktop       |
+| CloudSehll     | cs-keystore        | sharedkey     |
 
 ## Deployment
 
 From the infrastructure folder run the following commands:
+
 ```
 terraform init
-terraform plan 
+terraform plan
 terraform apply
 ```
-Active routes can be extracted from the deployed VMs by using the active_routes.sh script in the supplementals folder. 
+
+Active routes can be extracted from the deployed VMs by using the active_routes.sh script in the supplementals folder.
 
 ## Observations
 
