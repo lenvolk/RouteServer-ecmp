@@ -1,4 +1,4 @@
-location = "US Gov Virginia"   #region lookup https://github.com/claranet/terraform-azurerm-regions/blob/master/REGIONS.md
+location = "usgovvirginia"   #region lookup https://github.com/claranet/terraform-azurerm-regions/blob/master/REGIONS.md
 
 resource_group_name = "RS"
 

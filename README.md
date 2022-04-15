@@ -3,15 +3,10 @@
 ## Deployment
 
 ```bash
-If deploying into MAG
-Connect-AzAccount -EnvironmentName AzureUSGovernment
 
-If deploying into MAC
-Log into Azure
-Add-AzAccount
-
-Select the correct subscription
-Get-AzSubscription -SubscriptionName "AzGovInt" | Select-AzSubscription
+az cloud set --name AzureUSGovernment
+az login --only-show-errors -o table --query Dummy
+az account set -s AzGovInt
 
 From the infrastructure folder run the following commands:
 
@@ -66,16 +61,6 @@ You must create SSH keys in advance and upload them to Azure SSH keys. The same 
 | CloudShell     | cs-keystore        | adminpassword |
 | CloudShell     | ssh keys           | desktop       |
 | CloudSehll     | cs-keystore        | sharedkey     |
-
-## Deployment
-
-From the infrastructure folder run the following commands:
-
-```
-terraform init
-terraform plan
-terraform apply
-```
 
 Active routes can be extracted from the deployed VMs by using the active_routes.sh script in the supplementals folder.
 
