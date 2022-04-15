@@ -39,7 +39,7 @@ module "CSR" {
 
   disable_password_authentication = true
   admin_username = "len" #data.azurerm_key_vault_secret.keyvault-username.value
-  admin_password = "Volkovinskiy@2022" #data.azurerm_key_vault_secret.keyvault-password.value
+  admin_password = "Volk@ABC2022" #data.azurerm_key_vault_secret.keyvault-password.value
   ssh_key_data = data.azurerm_ssh_public_key.sshkey.public_key
 
   # to overcome an error of non-existent RG
