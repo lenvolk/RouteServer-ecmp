@@ -10,7 +10,6 @@ create secrets: adminusername adminpassword sharedkey
 
 create a key: from portal ssh key
 
-az vm image terms accept --publisher cisco --offer cisco-csr-1000v --plan "17_3_2-byol"
 
 ```bash
 
