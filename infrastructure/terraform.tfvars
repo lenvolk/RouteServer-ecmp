@@ -1,6 +1,6 @@
 location = "usgovvirginia"   #region lookup https://github.com/claranet/terraform-azurerm-regions/blob/master/REGIONS.md
 
-resource_group_name = "RS001"
+resource_group_name = "RS007"
 
 tags = {
     Terraform   = "true"

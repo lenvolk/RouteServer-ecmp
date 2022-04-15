@@ -27,7 +27,7 @@ From the infrastructure folder run the following commands:
 
 terraform init
 terraform plan
-terraform apply
+terraform apply -auto-approve
 
 ```
 
