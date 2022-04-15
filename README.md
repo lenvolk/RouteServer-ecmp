@@ -2,6 +2,14 @@
 
 ## Deployment
 
+Create resource group named "RS"
+
+Create KeyVault named "cs-keystore"
+
+create secrets: adminusername adminpassword sharedkey
+
+create a key: desktop
+
 ```bash
 
 az cloud set --name AzureUSGovernment
