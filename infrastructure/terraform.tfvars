@@ -1,6 +1,6 @@
 location = "eastus"
 
-resource_group_name = "RS"
+resource_group_name = "RS001"
 
 tags = {
     Terraform   = "true"
